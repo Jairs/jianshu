@@ -1,21 +1,24 @@
 import * as constants from './constants'
+import { fromJS } from 'immutable';
 
-const defaultState = {
-  focused: false
-}
+// immutable对象是不可改变的
+// fromJS将js对象转化为immutable对象
+// 用来使state不可改变
+const defaultState = fromJS({
+    focused: false
+});
 
 export default (state = defaultState, action) => {
 
-  const newState = JSON.parse(JSON.stringify(state));
+    if (action.type === constants.SEARCH_FOCUS) {
+      // immutable对象的set方法，会结合之前immutable对象的值和设置的值，返回一个全新的对象
+      return state.set('focused', true);
+    }
 
-  if (action.type === constants.SEARCH_FOCUS) {
-    newState.focused = true;
-  }
+    if (action.type === constants.SEARCH_BLUR) {
+        return state.set('focused', false);
+    }
 
-  if (action.type === constants.SEARCH_BLUR) {
-    newState.focused = false;
-  }
+    return state;
 
-  return newState;
-  
-} 
+}
