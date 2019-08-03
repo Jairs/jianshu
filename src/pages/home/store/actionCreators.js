@@ -31,4 +31,9 @@ export const getMoreList = (page) => {
       dispatch(addHomeList(result, page + 1));
     });
   }
-}
+};
+
+export const toggleTopShow = (flag) => ({
+  type: constants.TOGGLE_TOP_SHOW,
+  flag
+})

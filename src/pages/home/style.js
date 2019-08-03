@@ -154,3 +154,16 @@ export const WriterItemInfo = styled.div`
     color: #969696;
   }
 `;
+
+export const BackTop = styled.div`
+  position:fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  cursor: pointer;
+`;
