@@ -1,79 +1,21 @@
 import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
-  topicList: [{
-    id: 1,
-    title: '社会热点',
-    imgUrl: '//upload.jianshu.io/collections/images/261938/man-hands-reading-boy-large.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64'
-  }, {
-    id: 2,
-    title: '手绘',
-    imgUrl: '//upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64'
-  }],
-  articleList: [{
-    id: 1,
-    title: '忘记牛熊，当下积极买入并长期持有！',
-    desc: '最近市场很是火热，今天上证指数更是时隔8个月重新站上了3000点关口，从最低点以来的涨幅也达到了22%，可以说是已经进入了技术性牛市了。 行情好...',
-    imgUrl: '//upload-images.jianshu.io/upload_images/4688154-6d26ed9841f7194f.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-  }, {
-    id: 2,
-    title: 'Flutter 仿滴滴出行App',
-    desc: '绿色出行 Flutter 仿滴滴出行App地图：采用高德地图，仅简单完成了部分功能，基础地图，地址检索，逆地理编码。界面：仿滴滴主界面，地图中心...',
-    imgUrl: '//upload-images.jianshu.io/upload_images/13222938-d7aae2fd8438f09d?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-  }, {
-    id: 3,
-    title: '最平淡的菜，感受最真实的幸福，特别适合不想做饭的人',
-    desc: '现在吃饭不像以前，慢慢悠悠的做菜，然后花1-2个小时细细品味，都是在时间上需求很紧张，所以我们的吃食，也朝着快速的方向发展，今儿就教大家一个简易...',
-    imgUrl: '//upload-images.jianshu.io/upload_images/13705176-23d3e422327a8271.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-  }, {
-    id: 4,
-    title: '减肥最重要的一步，你做了吗？',
-    desc: '减肥最重要的一步，你做对了吗？ 大家好，我是你们的老朋友黄教练。 上一篇文章黄教练跟大家分享了一个健身新手最常见的错误。有两万多的阅读量...',
-    imgUrl: '//upload-images.jianshu.io/upload_images/14903703-748f4935340e0446.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
-  }],
-  recommendList:[{
-    id: 1,
-    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'
-  }, {
-    id: 2,
-    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png'
-  }, {
-    id: 3,
-    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png'
-  }, {
-    id: 4,
-    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png'
-  }],
-  writerList: [{
-    id: 1,
-    name: '无限猴子',
-    desc: '写了393.4k字 · 2k喜欢',
-    imgUrl: '//upload.jianshu.io/users/upload_avatars/13213889/7314c5cc-ca7f-4542-b914-2c8dffaf324d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-  }, {
-    id: 2,
-    name: '吴晓布',
-    desc: '写了681.1k字 · 21.6k喜欢',
-    imgUrl: '//upload.jianshu.io/users/upload_avatars/3343569/6940ee65-036f-4b7a-9935-5915d9b67d14.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-  }, {
-    id: 3,
-    name: '徐林Grace',
-    desc: '写了701.4k字 · 6.3k喜欢',
-    imgUrl: '//upload.jianshu.io/users/upload_avatars/5545154/1a3d5ed6-9ad1-44b3-9457-3e6a29dd1b71.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-  }, {
-    id: 4,
-    name: '遛遛心情的溜妈',
-    desc: '写了684.4k字 · 29k喜欢',
-    imgUrl: '//upload.jianshu.io/users/upload_avatars/5205317/1179d71b-e7c6-4023-89e8-bba25f88272b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-  }, {
-    id: 5,
-    name: '梅拾璎',
-    desc: '写了276.8k字 · 25.5k喜欢',
-    imgUrl: '//upload.jianshu.io/users/upload_avatars/3136195/484e32c3504a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-  },]
+  topicList: [],
+  articleList: [],
+  recommendList:[],
+  writerList: []
 });
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case 'change_home_data':
+      return state.merge({
+        topicList: fromJS(action.topicList),
+        articleList: fromJS(action.articleList),
+        recommendList: fromJS(action.recommendList),
+        writerList: fromJS(action.writerList)
+      });
     default:
       return state;
   }
