@@ -30,6 +30,19 @@ const defaultState = fromJS({
     title: '减肥最重要的一步，你做了吗？',
     desc: '减肥最重要的一步，你做对了吗？ 大家好，我是你们的老朋友黄教练。 上一篇文章黄教练跟大家分享了一个健身新手最常见的错误。有两万多的阅读量...',
     imgUrl: '//upload-images.jianshu.io/upload_images/14903703-748f4935340e0446.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240'
+  }],
+  recommendList:[{
+    id: 1,
+    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png'
+  }, {
+    id: 2,
+    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png'
+  }, {
+    id: 3,
+    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png'
+  }, {
+    id: 4,
+    imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png'
   }]
 });
 
