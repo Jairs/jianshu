@@ -23,7 +23,10 @@ class Writer extends Component {
                 <h3>{item.get('name')}</h3>
                 <p>{item.get('desc')}</p>
               </WriterItemInfo>
-              <span className='attention'>+关注</span>
+              <span className='attention'>
+                <i className='iconfont'>&#xe603;</i>
+                关注
+              </span>
             </WriterItem>
           ))
         }

@@ -130,6 +130,12 @@ export const WriterItem = styled.div`
     font-size: 13px;
     color: #42c02e;
     cursor:pointer;
+    line-height: 14px;
+    .iconfont {
+      font-size: 10px;
+      font-weight: bold;
+      margin-right: 2px;
+    }
   }
 `;
 
