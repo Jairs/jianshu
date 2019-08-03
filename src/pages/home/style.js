@@ -91,3 +91,54 @@ export const RecommendItem = styled.div`
   background: url(${(props)=>props.imgUrl});
   background-size: contain;
 `;
+
+export const WriterWrapper = styled.div`
+  width: 278px;
+  // border: 1px solid #dcdcdc;
+  // border-radius: 3px;
+  padding-bottom: 15px;
+  // height: 300px;
+  // line-height: 300px;
+  // text-align: center;
+`;
+
+export const WriterItem = styled.div`
+  overflow: hidden;
+  width: 278px;
+  margin-top: 15px;
+  .pic {
+    float: left;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+  }
+  .attention {
+    float: right;
+    font-size: 13px;
+    color: #42c02e;
+    cursor:pointer;
+  }
+`;
+
+export const WriterItemInfo = styled.div`
+  float: left;
+  margin-left: 10px;
+  width: 150px;
+  height: 48px;
+  position: relative;
+  h3 {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 14px;
+    color: #333;
+  }
+  p {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    font-size: 12px;
+    color: #969696;
+  }
+`;

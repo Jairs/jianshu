@@ -43,7 +43,33 @@ const defaultState = fromJS({
   }, {
     id: 4,
     imgUrl: '//cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png'
-  }]
+  }],
+  writerList: [{
+    id: 1,
+    name: '无限猴子',
+    desc: '写了393.4k字 · 2k喜欢',
+    imgUrl: '//upload.jianshu.io/users/upload_avatars/13213889/7314c5cc-ca7f-4542-b914-2c8dffaf324d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+  }, {
+    id: 2,
+    name: '吴晓布',
+    desc: '写了681.1k字 · 21.6k喜欢',
+    imgUrl: '//upload.jianshu.io/users/upload_avatars/3343569/6940ee65-036f-4b7a-9935-5915d9b67d14.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+  }, {
+    id: 3,
+    name: '徐林Grace',
+    desc: '写了701.4k字 · 6.3k喜欢',
+    imgUrl: '//upload.jianshu.io/users/upload_avatars/5545154/1a3d5ed6-9ad1-44b3-9457-3e6a29dd1b71.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+  }, {
+    id: 4,
+    name: '遛遛心情的溜妈',
+    desc: '写了684.4k字 · 29k喜欢',
+    imgUrl: '//upload.jianshu.io/users/upload_avatars/5205317/1179d71b-e7c6-4023-89e8-bba25f88272b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+  }, {
+    id: 5,
+    name: '梅拾璎',
+    desc: '写了276.8k字 · 25.5k喜欢',
+    imgUrl: '//upload.jianshu.io/users/upload_avatars/3136195/484e32c3504a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
+  },]
 });
 
 export default (state = defaultState, action) => {
