@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { actionCreators } from './store';
 import {
   LoginWrapper, 
   LoginBox,
@@ -9,16 +11,34 @@ import {
 
 class Login extends PureComponent {
   render () {
-    return (
-      <LoginWrapper>
-        <LoginBox>
-          <Input placeholder='账号' />
-          <Input placeholder='密码' />
-          <Button>登录</Button>
-        </LoginBox>
-      </LoginWrapper>
-    )
+    const { loginStatus, login } = this.props;
+    if (!loginStatus) {
+      return (
+        <LoginWrapper>
+          <LoginBox>
+            <Input placeholder='账号' innerRef={(input) => {this.account = input}} />
+            <Input placeholder='密码' type='password' innerRef={(input) => {this.password = input}} />
+            <Button onClick={() => login(this.account, this.password)}>登录</Button>
+          </LoginBox>
+        </LoginWrapper>
+      )
+    } else {
+      return (
+        <Redirect to='/' />
+      )
+    }
+    
   }
 }
 
-export default connect(null, null)(Login);
+const mapStateToProps = (state) => ({
+  loginStatus: state.getIn(['login', 'login'])
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  login (accountElem, passwordElem) {
+    dispatch(actionCreators.login(accountElem, passwordElem));
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
