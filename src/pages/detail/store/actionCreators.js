@@ -14,4 +14,4 @@ export const getDetail = (id) => {
       dispatch(changeDetail(result.title, result.content));
     })
   }
-}
+};
